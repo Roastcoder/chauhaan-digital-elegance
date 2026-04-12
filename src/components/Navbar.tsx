@@ -127,9 +127,9 @@ export function Navbar() {
         <div className="w-full px-4 sm:px-6 lg:px-10 h-full flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0">
-            <img src={logoIcon} alt="Chauhaan Computers" className="w-8 h-8 sm:w-9 sm:h-9" />
+            <img src={logoIcon} alt="Chauhan Computers" className="w-8 h-8 sm:w-9 sm:h-9" />
             <div className="hidden sm:block">
-              <span className="text-base font-bold text-foreground leading-none">Chauhaan</span>
+              <span className="text-base font-bold text-foreground leading-none">Chauhan</span>
               <span className="text-base font-light text-muted-foreground leading-none ml-1">Computers</span>
             </div>
           </Link>
@@ -212,11 +212,10 @@ export function Navbar() {
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               className="fixed top-0 left-0 bottom-0 w-[280px] bg-card z-50 lg:hidden shadow-xl overflow-y-auto"
             >
-              {/* Mobile header */}
               <div className="flex items-center justify-between p-4 border-b border-border">
                 <Link to="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
-                  <img src={logoIcon} alt="Chauhaan Computers" className="w-8 h-8" />
-                  <span className="text-sm font-bold text-foreground">Chauhaan Computers</span>
+                  <img src={logoIcon} alt="Chauhan Computers" className="w-8 h-8" />
+                  <span className="text-sm font-bold text-foreground">Chauhan Computers</span>
                 </Link>
                 <button onClick={() => setMobileOpen(false)} className="p-1 text-muted-foreground">
                   <X className="w-5 h-5" />
@@ -224,13 +223,11 @@ export function Navbar() {
               </div>
 
               <div className="p-4 space-y-1">
-                {/* Login Button on Mobile */}
                 <Link to="/login" onClick={() => setMobileOpen(false)}
                   className="flex items-center gap-3 px-3 py-3 bg-primary text-primary-foreground rounded-lg text-sm font-semibold mb-3">
                   <User className="w-4 h-4" /> Login / Sign Up
                 </Link>
 
-                {/* Main links */}
                 {mobileMenuLinks.map(link => (
                   <Link key={link.path} to={link.path} onClick={() => setMobileOpen(false)}
                     className={`flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
@@ -240,7 +237,6 @@ export function Navbar() {
                   </Link>
                 ))}
 
-                {/* Laptops expandable */}
                 <button onClick={() => setMobileSub(mobileSub === "laptops" ? null : "laptops")}
                   className="flex items-center justify-between w-full px-3 py-2.5 rounded-lg text-sm font-medium text-foreground hover:bg-muted">
                   Laptops
@@ -261,7 +257,6 @@ export function Navbar() {
                   )}
                 </AnimatePresence>
 
-                {/* Accessories expandable */}
                 <button onClick={() => setMobileSub(mobileSub === "accessories" ? null : "accessories")}
                   className="flex items-center justify-between w-full px-3 py-2.5 rounded-lg text-sm font-medium text-foreground hover:bg-muted">
                   Accessories
@@ -281,13 +276,15 @@ export function Navbar() {
                   )}
                 </AnimatePresence>
 
-                {/* Call */}
                 <div className="pt-4 border-t border-border mt-4">
                   <a href="tel:09509317543" className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium text-primary">
                     <Phone className="w-4 h-4" /> 95093 17543
                   </a>
                   <a href="tel:08559965655" className="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground">
                     <Phone className="w-4 h-4" /> 85599 65655
+                  </a>
+                  <a href="tel:09376721157" className="flex items-center gap-2 px-3 py-2 text-sm text-primary font-medium">
+                    <Phone className="w-4 h-4" /> 93767 21157 (Customer Support)
                   </a>
                 </div>
               </div>

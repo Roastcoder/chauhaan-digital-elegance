@@ -17,7 +17,7 @@ export function ContactSection() {
                 <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                 <div>
                   <h3 className="text-sm font-semibold text-foreground mb-1">Address</h3>
-                  <p className="text-sm text-muted-foreground">Shop No B-5, Girdhar Marg, near Indian Bank, Ashok Vihar, Sector 11, Malviya Nagar, Jaipur, Rajasthan 302017</p>
+                  <p className="text-sm text-muted-foreground">B-5 A, Vaibhav Enclave, Near Indian Bank, Girdhar Marg, Malviya Nagar, Jaipur, Rajasthan 302017</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -26,7 +26,7 @@ export function ContactSection() {
                   <h3 className="text-sm font-semibold text-foreground mb-1">Phone</h3>
                   <a href="tel:09509317543" className="text-sm text-primary hover:underline block">95093 17543</a>
                   <a href="tel:08559965655" className="text-sm text-primary hover:underline block">85599 65655</a>
-                  <a href="tel:09376721157" className="text-sm text-muted-foreground hover:underline block">93767 21157 (Service)</a>
+                  <a href="tel:09376721157" className="text-sm text-primary hover:underline block font-medium">93767 21157 (Customer Support)</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -65,7 +65,7 @@ export function ContactSection() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Chauhaan Computers Location"
+                title="Chauhan Computers Location"
               />
             </div>
           </AnimatedSection>

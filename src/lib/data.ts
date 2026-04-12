@@ -7,7 +7,6 @@ import printerImg from "@/assets/printer.png";
 import serviceLaptopImg from "@/assets/service-laptop-repair.png";
 import servicePrinterImg from "@/assets/service-printer-repair.png";
 import serviceCpuImg from "@/assets/service-cpu-repair.png";
-import serviceCctvImg from "@/assets/service-cctv.png";
 
 export interface Product {
   id: string;
@@ -65,17 +64,9 @@ export const services: Service[] = [
     image: serviceCpuImg,
     icon: "cpu",
   },
-  {
-    id: "cctv-installation",
-    name: "CCTV Installation",
-    description: "Complete CCTV setup and installation. HD cameras, DVR/NVR configuration, and remote monitoring setup.",
-    image: serviceCctvImg,
-    icon: "camera",
-  },
 ];
 
 export const products: Product[] = [
-  // CPU | Desktop Setup (5)
   {
     id: "1",
     name: "ProDesk Elite i9",
@@ -83,7 +74,7 @@ export const products: Product[] = [
     price: 89999,
     originalPrice: 99999,
     image: cpuDesktopImg,
-    brand: "Chauhaan",
+    brand: "Chauhan",
     ram: "32GB",
     storage: "1TB SSD",
     specs: ["Intel Core i9-14900K", "32GB DDR5", "1TB NVMe SSD", "NVIDIA RTX 4070"],
@@ -98,7 +89,7 @@ export const products: Product[] = [
     category: "cpu-desktop",
     price: 74999,
     image: cpuDesktopImg,
-    brand: "Chauhaan",
+    brand: "Chauhan",
     ram: "64GB",
     storage: "2TB SSD",
     specs: ["AMD Ryzen 9 7950X", "64GB DDR5", "2TB NVMe SSD", "NVIDIA RTX 4080"],
@@ -113,7 +104,7 @@ export const products: Product[] = [
     category: "cpu-desktop",
     price: 54999,
     image: cpuDesktopImg,
-    brand: "Chauhaan",
+    brand: "Chauhan",
     ram: "32GB",
     storage: "1TB SSD",
     specs: ["Intel Core i7-14700", "32GB DDR5", "1TB NVMe SSD", "Intel Arc A770"],
@@ -127,7 +118,7 @@ export const products: Product[] = [
     category: "cpu-desktop",
     price: 129999,
     image: cpuDesktopImg,
-    brand: "Chauhaan",
+    brand: "Chauhan",
     ram: "32GB",
     storage: "2TB SSD",
     specs: ["Intel Core i9-14900K", "32GB DDR5", "2TB NVMe SSD", "NVIDIA RTX 4090"],
@@ -141,7 +132,7 @@ export const products: Product[] = [
     category: "cpu-desktop",
     price: 32999,
     image: cpuDesktopImg,
-    brand: "Chauhaan",
+    brand: "Chauhan",
     ram: "16GB",
     storage: "512GB SSD",
     specs: ["Intel Core i5-14400", "16GB DDR5", "512GB NVMe SSD", "Intel UHD 730"],
@@ -149,8 +140,6 @@ export const products: Product[] = [
     rating: 4.3,
     reviews: 312,
   },
-
-  // Dell Laptop (5)
   {
     id: "6",
     name: "Dell Inspiron 15",
@@ -226,8 +215,6 @@ export const products: Product[] = [
     reviews: 267,
     badge: "Gaming",
   },
-
-  // HP Laptop (4)
   {
     id: "11",
     name: "HP Pavilion 15",
@@ -289,8 +276,6 @@ export const products: Product[] = [
     reviews: 312,
     badge: "Value",
   },
-
-  // Lenovo Laptop (2)
   {
     id: "15",
     name: "Lenovo ThinkPad X1 Carbon",
@@ -321,8 +306,6 @@ export const products: Product[] = [
     rating: 4.4,
     reviews: 278,
   },
-
-  // MacBook (6)
   {
     id: "17",
     name: "MacBook Air M2",
@@ -414,8 +397,6 @@ export const products: Product[] = [
     reviews: 198,
     badge: "Best Value",
   },
-
-  // Printers (2)
   {
     id: "23",
     name: "HP LaserJet Pro MFP",
@@ -448,19 +429,19 @@ export const testimonials = [
   {
     name: "Arjun Mehta",
     role: "Software Architect",
-    text: "The Studio Tower Pro transformed my development workflow. Builds that took 20 minutes now finish in under 3. Chauhaan's attention to detail is unmatched.",
+    text: "The Studio Tower Pro transformed my development workflow. Builds that took 20 minutes now finish in under 3. Chauhan's attention to detail is unmatched.",
     rating: 5,
   },
   {
     name: "Priya Sharma",
     role: "Digital Artist",
-    text: "I've tried every brand. Chauhaan is the only one that delivers true professional-grade hardware with a premium experience from unboxing to daily use.",
+    text: "I've tried every brand. Chauhan is the only one that delivers true professional-grade hardware with a premium experience from unboxing to daily use.",
     rating: 5,
   },
   {
     name: "Karan Singh",
     role: "Business Owner",
-    text: "From laptop purchases to CCTV installation, Chauhaan Computers handles everything for my office. Their service is outstanding.",
+    text: "From laptop purchases to IT services, Chauhan Computers handles everything for my office. Their service is outstanding.",
     rating: 5,
   },
 ];
@@ -497,13 +478,5 @@ export const blogPosts = [
     date: "February 28, 2026",
     category: "Comparison",
     readTime: "6 min read",
-  },
-  {
-    id: "5",
-    title: "Setting Up a Home CCTV System: Complete Guide",
-    excerpt: "Everything you need to know about choosing, installing, and maintaining a home security camera system.",
-    date: "February 20, 2026",
-    category: "Security",
-    readTime: "7 min read",
   },
 ];
