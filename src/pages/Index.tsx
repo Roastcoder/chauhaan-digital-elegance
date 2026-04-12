@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
-  Star, Mail, Truck, Shield, MapPin, Award, Users, Heart
+  Star, Mail, Award, Users, Heart
 } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { ProductCard } from "@/components/ProductCard";
@@ -31,24 +31,17 @@ const serviceCards = [
 ];
 
 const trustStats = [
-  { icon: Star, value: "4.8★", label: "Google Rating", color: "text-yellow-500" },
-  { icon: Award, value: "4.7★", label: "JustDial Rating", color: "text-primary" },
-  { icon: Users, value: "10,000+", label: "Customers Served", color: "text-cyan" },
-  { icon: Heart, value: "Since 2010", label: "Still Serving", color: "text-red-500" },
-];
-
-const trustBadges = [
-  { icon: Truck, label: "Free Delivery", desc: "Across Jaipur" },
-  { icon: Shield, label: "30 Day Warranty", desc: "On all products" },
-  { icon: MapPin, label: "Visit Store", desc: "Malviya Nagar, Jaipur" },
+  { icon: Star, value: "4.8★", label: "Google Rating", color: "text-yellow-500", link: "https://g.co/kgs/chauhan-computers" },
+  { icon: Award, value: "4.7★", label: "JustDial Rating", color: "text-primary", link: "https://www.justdial.com/Jaipur/Chauhan-Computers" },
+  { icon: Users, value: "10,000+", label: "Customers Served", color: "text-cyan", link: undefined },
+  { icon: Heart, value: "Since 2010", label: "Still Serving", color: "text-red-500", link: undefined },
 ];
 
 const fallbackPromos = [
-  { image: warrantyBadge, title: "30 Days Hardware Warranty", subtitle: "On all products — terms apply", link: "/contact" },
+  { image: warrantyBadge, title: "Warranty on All Products", subtitle: "Hardware warranty — terms apply", link: "/contact" },
   { image: bannerServices, title: "Expert Repair & IT Services", subtitle: "Certified technicians for all brands", link: "/services" },
 ];
 
-// Instagram video reels from Chauhan Computers
 const customerVideos = [
   { embedUrl: "https://www.instagram.com/reel/C8xQvJ_y8Zf/embed", caption: "Happy Customer Review" },
   { embedUrl: "https://www.instagram.com/reel/C7kL2zxyKQz/embed", caption: "Customer Experience" },
@@ -102,39 +95,49 @@ export default function Index() {
     <div className="bg-background">
       <PremiumHeroBanner />
 
-      {/* Trust Stats Bar */}
-      <section className="py-4 sm:py-6 bg-muted/30 border-b border-border">
+      {/* Trust Stats Bar - smaller */}
+      <section className="py-3 sm:py-4 bg-muted/30 border-b border-border">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-            {trustStats.map((stat, i) => (
-              <motion.div key={stat.label} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-card rounded-xl border border-border text-center justify-center">
-                <stat.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${stat.color}`} />
-                <div>
-                  <p className="text-sm sm:text-lg font-bold text-foreground">{stat.value}</p>
-                  <p className="text-[10px] sm:text-xs text-muted-foreground">{stat.label}</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
+            {trustStats.map((stat, i) => {
+              const inner = (
+                <div className="flex items-center gap-2 p-2 sm:p-3 bg-card rounded-lg border border-border text-center justify-center">
+                  <stat.icon className={`w-4 h-4 sm:w-5 sm:h-5 ${stat.color}`} />
+                  <div>
+                    <p className="text-xs sm:text-sm font-bold text-foreground">{stat.value}</p>
+                    <p className="text-[9px] sm:text-[10px] text-muted-foreground">{stat.label}</p>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
+              );
+              return (
+                <motion.div key={stat.label} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+                  {stat.link ? (
+                    <a href={stat.link} target="_blank" rel="noopener noreferrer" className="block hover:shadow-md transition-shadow rounded-lg">
+                      {inner}
+                    </a>
+                  ) : inner}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Shop by Brand — Top & Sticky */}
-      <section className="py-8 sm:py-10 bg-background sticky top-14 sm:top-16 z-30 bg-background/95 backdrop-blur-sm border-b border-border">
+      {/* Shop by Brand — Top & Sticky with gradient */}
+      <section className="py-6 sm:py-8 sticky top-14 sm:top-16 z-30 border-b border-border" style={{ background: "linear-gradient(135deg, #000000 0%, #1a1a1a 40%, #b8860b 100%)" }}>
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-          <h2 className="text-lg sm:text-2xl font-bold text-foreground mb-5">Shop by Brand</h2>
+          <h2 className="text-lg sm:text-2xl font-bold text-white mb-5">Shop by Brand</h2>
           <div className="grid grid-cols-3 md:grid-cols-6 gap-2 sm:gap-4">
             {categories.map((cat, i) => (
               <motion.div key={cat.slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
                 <Link to={`/category/${cat.slug}`}
-                  className="flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-card border border-border hover:shadow-lg hover:border-primary/20 transition-all group">
-                  <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-xl overflow-hidden bg-muted/50 flex items-center justify-center">
-                    <img src={cat.image} alt={cat.name} className="w-10 h-10 sm:w-16 sm:h-16 object-contain group-hover:scale-110 transition-transform" loading="lazy" />
+                  className="flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:border-yellow-500/40 transition-all group">
+                  <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-xl overflow-hidden bg-white/10 flex items-center justify-center">
+                    <img src={cat.image} alt={cat.name} className="w-12 h-12 sm:w-20 sm:h-20 object-contain group-hover:scale-110 transition-transform" loading="lazy" />
                   </div>
-                  <span className="text-[10px] sm:text-sm font-medium text-foreground text-center leading-tight">{cat.name}</span>
+                  <span className="text-[10px] sm:text-sm font-medium text-white text-center leading-tight">{cat.name}</span>
                 </Link>
               </motion.div>
             ))}
@@ -144,11 +147,11 @@ export default function Index() {
 
       {promos[0] && <PromoBannerCard {...promos[0]} />}
 
-      {/* Store Video */}
-      <section className="py-8 sm:py-10 bg-muted/30">
+      {/* Store Video - smaller heading area */}
+      <section className="py-4 sm:py-6 bg-muted/30">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-          <h2 className="text-lg sm:text-2xl font-bold text-foreground mb-5">Visit Our Store</h2>
-          <div className="rounded-xl overflow-hidden border border-border aspect-video max-h-[400px]">
+          <h2 className="text-base sm:text-xl font-bold text-foreground mb-3">Visit Our Store</h2>
+          <div className="rounded-xl overflow-hidden border border-border aspect-video max-h-[350px]">
             <iframe
               src="https://www.youtube.com/embed?listType=user_uploads&list=chauhancomputersco"
               className="w-full h-full"
@@ -157,27 +160,6 @@ export default function Index() {
               loading="lazy"
               title="Chauhan Computers Store"
             />
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Badges */}
-      <section className="py-6 sm:py-8 bg-background">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-3 gap-3 sm:gap-4">
-            {trustBadges.map((b, i) => (
-              <motion.div key={b.label} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-card rounded-xl border border-border">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                  <b.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" strokeWidth={1.5} />
-                </div>
-                <div>
-                  <p className="text-xs sm:text-sm font-semibold text-foreground">{b.label}</p>
-                  <p className="text-[10px] sm:text-xs text-muted-foreground">{b.desc}</p>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
@@ -201,7 +183,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Our Services — Lower on Page */}
+      {/* Our Services */}
       <section className="py-8 sm:py-10 bg-muted/30">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between mb-5">

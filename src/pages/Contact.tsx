@@ -2,9 +2,10 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const contactInfo = [
-  { icon: Phone, label: "Phone", value: "098297 21157", href: "tel:09829721157" },
-  { icon: Mail, label: "Email", value: "info@chauhaancomputers.com", href: "mailto:info@chauhaancomputers.com" },
-  { icon: MapPin, label: "Address", value: "Shop No B-5, Girdhar Marg, Malviya Nagar, Jaipur 302017", href: "#" },
+  { icon: Phone, label: "Sales", value: "95093 17543 / 85599 65655", href: "tel:09509317543" },
+  { icon: Phone, label: "Customer Support", value: "93767 21157", href: "tel:09376721157" },
+  { icon: Mail, label: "Email", value: "info@chauhancomputers.com", href: "mailto:info@chauhancomputers.com" },
+  { icon: MapPin, label: "Address", value: "B-5 A, Vaibhav Enclave, Near Indian Bank, Girdhar Marg, Malviya Nagar, Jaipur, Rajasthan 302017", href: "#" },
   { icon: Clock, label: "Hours", value: "Mon – Sun: Open until 9:00 PM", href: "#" },
 ];
 
@@ -63,7 +64,7 @@ export default function Contact() {
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.0!2d75.8!3d26.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDUxJzAwLjAiTiA3NcKwNDgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1"
                     width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
-                    title="Chauhaan Computers Location"
+                    title="Chauhan Computers Location"
                   />
                 </div>
               </div>

@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { services } from "@/lib/data";
-import { Laptop, Printer, Cpu, Camera } from "lucide-react";
+import { Laptop, Printer, Cpu } from "lucide-react";
 import bannerServices from "@/assets/banner-services.jpg";
 
-const iconMap: Record<string, any> = { laptop: Laptop, printer: Printer, cpu: Cpu, camera: Camera };
+const iconMap: Record<string, any> = { laptop: Laptop, printer: Printer, cpu: Cpu };
 
 export default function Services() {
   return (
     <div className="bg-background">
-      {/* Hero Banner */}
       <section className="w-full">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-3">
           <div className="relative rounded-2xl overflow-hidden">
@@ -25,7 +24,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Services Grid */}
       <section className="py-8 sm:py-10">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
           <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">All Services</h2>
@@ -46,10 +44,10 @@ export default function Services() {
                         <h3 className="text-sm font-semibold text-foreground">{service.name}</h3>
                       </div>
                       <p className="text-xs text-muted-foreground leading-relaxed mb-3">{service.description}</p>
-                      <Link to="/contact"
+                      <a href="tel:09376721157"
                         className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded-lg text-xs font-semibold hover:opacity-90 transition-opacity">
-                        Book Service
-                      </Link>
+                        Call Customer Support
+                      </a>
                     </div>
                   </div>
                 </AnimatedSection>
@@ -59,7 +57,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-8 sm:py-10 bg-muted/30">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 text-center">
           <AnimatedSection>
@@ -67,9 +64,9 @@ export default function Services() {
             <p className="text-sm text-muted-foreground max-w-lg mx-auto mb-5">
               We also offer custom PC builds, network setup, and IT consultation for businesses.
             </p>
-            <Link to="/contact" className="inline-block px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity">
-              Contact Us
-            </Link>
+            <a href="tel:09376721157" className="inline-block px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity">
+              Call Customer Support: 93767 21157
+            </a>
           </AnimatedSection>
         </div>
       </section>
