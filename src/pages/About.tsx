@@ -11,8 +11,8 @@ const stats = [
 ];
 
 const team = [
-  { name: "Rajesh Chauhaan", role: "Founder & CEO", bio: "With 15+ years in the tech industry, Rajesh founded Chauhaan Computers with a vision to provide premium technology solutions." },
-  { name: "Meera Chauhaan", role: "Operations Head", bio: "Meera ensures every customer receives exceptional service and manages the day-to-day operations seamlessly." },
+  { name: "Rajesh Chauhan", role: "Founder & CEO", bio: "With 15+ years in the tech industry, Rajesh founded Chauhan Computers with a vision to provide premium technology solutions." },
+  { name: "Meera Chauhan", role: "Operations Head", bio: "Meera ensures every customer receives exceptional service and manages the day-to-day operations seamlessly." },
   { name: "Amit Verma", role: "Technical Lead", bio: "Certified hardware engineer with expertise in laptop, desktop, and CCTV installations across all major brands." },
 ];
 
@@ -23,7 +23,7 @@ export default function About() {
       <section className="w-full">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-3">
           <div className="relative rounded-2xl overflow-hidden">
-            <img src={bannerBusiness} alt="About Chauhaan Computers" className="w-full h-[200px] sm:h-[280px] md:h-[320px] object-cover" />
+            <img src={bannerBusiness} alt="About Chauhan Computers" className="w-full h-[200px] sm:h-[280px] md:h-[320px] object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent flex items-center">
               <div className="px-6 sm:px-10 md:px-12">
                 <p className="text-white/60 text-xs uppercase tracking-widest mb-2">Our Story</p>
@@ -59,7 +59,7 @@ export default function About() {
             <AnimatedSection>
               <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4">Our Mission</h2>
               <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                At Chauhaan Computers, we believe everyone deserves access to reliable, high-performance technology.
+                At Chauhan Computers, we believe everyone deserves access to reliable, high-performance technology.
                 We carefully select and test every product we sell to ensure it meets our rigorous standards.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
